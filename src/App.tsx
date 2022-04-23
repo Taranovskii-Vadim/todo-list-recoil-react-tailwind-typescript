@@ -21,7 +21,14 @@ const todosState = atom<Todo[]>({
 
 const App = () => {
   const todos = useRecoilValue(todosState);
-  return <div></div>;
+  return (
+    <div className="w-1/2 m-auto">
+      <AddForm />
+      {todos.map((item) => (
+        <TodoItem key={item.id} todo={item} />
+      ))}
+    </div>
+  );
 };
 
 export default App;
