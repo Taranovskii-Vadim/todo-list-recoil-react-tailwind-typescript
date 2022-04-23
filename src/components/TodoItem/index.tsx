@@ -27,7 +27,7 @@ const TodoItem = ({ todo }: Props): JSX.Element => {
   };
 
   return (
-    <div className="flex justify-between items-center p-3 border rounded-lg border-slate-200">
+    <div className="flex justify-between items-center p-3 mb-3 border rounded-lg border-slate-200">
       <div className="flex items-center">
         <input type="checkbox" className="mr-5" onChange={onSetDone} />
         <p className={`${isDone ? "line-through" : ""}`}>{text}</p>

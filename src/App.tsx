@@ -16,14 +16,14 @@ export interface Todo {
 
 export const todosState = atom<Todo[]>({
   key: "todosState",
-  default: [{ id: 1, text: "test", isDone: false }],
+  default: [],
 });
 
 const App = () => {
   const todos = useRecoilValue(todosState);
 
   return (
-    <div className="w-1/2 m-auto">
+    <div className="w-1/2 m-auto mt-10">
       <AddForm />
       {/* TODO according to tutorial, better way to create List component in my opinion*/}
       {todos.map((item) => (
