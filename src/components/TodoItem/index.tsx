@@ -8,21 +8,12 @@ interface Props {
 
 const TodoItem = ({ todo }: Props): JSX.Element => {
   const { id, text, isDone } = todo;
+
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        boxSizing: "border-box",
-        border: "1px solid gray",
-        padding: "10px",
-        borderRadius: 5,
-      }}
-    >
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <input type="checkbox" />
-        <p style={{ margin: 0 }}>{text}</p>
+    <div className="flex justify-between items-center p-3 border rounded-lg border-slate-200">
+      <div className="flex items-center">
+        <input type="checkbox" className="mr-5" />
+        <p>{text}</p>
       </div>
       <button>delete</button>
     </div>
