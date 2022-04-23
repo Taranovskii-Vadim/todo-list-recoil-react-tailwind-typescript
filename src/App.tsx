@@ -1,30 +1,22 @@
 import React from "react";
-import { atom, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
+
+import { filterSelector } from "./store/Filter";
 
 import AddForm from "./components/AddForm";
+import FilterForm from "./components/FilterForm";
 import TodoItem from "./components/TodoItem";
 
 // TODO think about recoil types
-// TODO think about recoil folder structure
 // TODO fix exports
 
-export interface Todo {
-  id: number;
-  text: string;
-  isDone: boolean;
-}
-
-export const todosState = atom<Todo[]>({
-  key: "todosState",
-  default: [],
-});
-
 const App = () => {
-  const todos = useRecoilValue(todosState);
+  const todos = useRecoilValue(filterSelector);
 
   return (
     <div className="w-1/2 m-auto mt-10">
       <AddForm />
+      <FilterForm />
       {/* TODO according to tutorial, better way to create List component in my opinion*/}
       {todos.map((item) => (
         <TodoItem key={item.id} todo={item} />

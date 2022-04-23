@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useSetRecoilState } from "recoil";
 
-import { todosState } from "../../App";
+import { todosState } from "../../store/Todos";
 
 const AddForm = (): JSX.Element => {
   const setState = useSetRecoilState(todosState);
