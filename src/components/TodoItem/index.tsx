@@ -1,7 +1,8 @@
 import React from "react";
 import { useSetRecoilState } from "recoil";
 
-import { Todo, todosState } from "../../store/Todos";
+import { todosState } from "../../store/Todos";
+import { Todo } from "../../store/Todos/types";
 
 interface Props {
   todo: Todo;

@@ -1,10 +1,5 @@
 import { atom, selector } from "recoil";
-
-export interface Todo {
-  id: number;
-  text: string;
-  isDone: boolean;
-}
+import { Todo } from "./types";
 
 export const todosState = atom<Todo[]>({
   key: "todosState",
