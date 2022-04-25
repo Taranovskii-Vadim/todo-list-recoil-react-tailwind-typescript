@@ -2,7 +2,12 @@ import { atom, selector } from "recoil";
 
 import { todosState } from "../Todos";
 
-export const filterState = atom({ key: "filterState", default: "all" });
+import { FilterKey } from "./types";
+
+export const filterState = atom<FilterKey>({
+  key: "filterState",
+  default: "all",
+});
 
 export const filterSelector = selector({
   key: "filterSelector",

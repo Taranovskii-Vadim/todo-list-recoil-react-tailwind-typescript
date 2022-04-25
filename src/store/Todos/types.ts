@@ -3,3 +3,7 @@ export interface Todo {
   text: string;
   isDone: boolean;
 }
+
+export interface Status {
+  [key: string]: number;
+}

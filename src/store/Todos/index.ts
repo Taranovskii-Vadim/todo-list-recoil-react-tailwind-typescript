@@ -1,5 +1,5 @@
 import { atom, selector } from "recoil";
-import { Todo } from "./types";
+import { Status, Todo } from "./types";
 
 export const todosState = atom<Todo[]>({
   key: "todosState",
@@ -9,7 +9,7 @@ export const todosState = atom<Todo[]>({
   ],
 });
 
-export const statusSelector = selector({
+export const statusSelector = selector<Status>({
   key: "statusSelector",
   get: ({ get }) => {
     const list = get(todosState);
