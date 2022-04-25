@@ -9,7 +9,7 @@ interface Props {
 }
 
 const TodoItem = ({ todo }: Props): JSX.Element => {
-  const { id, isDone, text } = todo;
+  const { id, completed, title } = todo;
   const setState = useSetRecoilState(todosState);
 
   const onDelete = (): void => {
@@ -20,7 +20,7 @@ const TodoItem = ({ todo }: Props): JSX.Element => {
     setState((prev) =>
       prev.map((item) => {
         if (item.id === id) {
-          return { ...item, isDone: !item.isDone };
+          return { ...item, completed: !item.completed };
         }
         return item;
       })
@@ -31,7 +31,7 @@ const TodoItem = ({ todo }: Props): JSX.Element => {
     <div className="flex justify-between items-center p-3 mb-3 border rounded-lg border-slate-200">
       <div className="flex items-center">
         <input type="checkbox" className="mr-5" onChange={onSetDone} />
-        <p className={`${isDone ? "line-through" : ""}`}>{text}</p>
+        <p className={`${completed ? "line-through" : ""}`}>{title}</p>
       </div>
       <button onClick={onDelete}>X</button>
     </div>

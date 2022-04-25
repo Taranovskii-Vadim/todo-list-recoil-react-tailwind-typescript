@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { RecoilRoot } from "recoil";
 import "./index.css";
@@ -12,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <RecoilRoot>
-      <App />
+      <Suspense fallback={<div>loading...</div>}>
+        <App />
+      </Suspense>
     </RecoilRoot>
   </React.StrictMode>
 );

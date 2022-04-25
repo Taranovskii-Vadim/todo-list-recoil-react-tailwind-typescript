@@ -1,7 +1,7 @@
 export interface Todo {
   id: number;
-  text: string;
-  isDone: boolean;
+  title: string;
+  completed: boolean;
 }
 
 export interface Status {

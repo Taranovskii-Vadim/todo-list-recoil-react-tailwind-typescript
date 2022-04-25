@@ -8,9 +8,12 @@ const AddForm = (): JSX.Element => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const addItem = (): void => {
-    const text = inputRef.current ? inputRef.current.value : "";
+    const title = inputRef.current ? inputRef.current.value : "";
 
-    setState((prev) => [...prev, { id: prev.length + 1, text, isDone: false }]);
+    setState((prev) => [
+      ...prev,
+      { id: prev.length + 1, title, completed: false },
+    ]);
   };
 
   return (
