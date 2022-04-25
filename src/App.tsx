@@ -8,8 +8,6 @@ import FilterForm from "./components/FilterForm";
 import TodoItem from "./components/TodoItem";
 import StatusBar from "./components/StatusBar";
 
-// TODO think about recoil types
-
 const App = () => {
   const todos = useRecoilValue(filterSelector);
 
