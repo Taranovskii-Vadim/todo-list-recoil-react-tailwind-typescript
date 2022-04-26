@@ -1,10 +1,11 @@
 import { atom, selector } from "recoil";
+import { getAtomKey, getSelectorKey } from "../../utils";
 import { Status, Todo } from "./types";
 
 export const todosState = atom<Todo[]>({
-  key: "todosState",
+  key: getAtomKey("todos"),
   default: selector({
-    key: "todosState/Default",
+    key: getAtomKey("todos", "default"),
     get: async () => {
       const response = await fetch("http://jsonplaceholder.typicode.com/todos");
       const data = await response.json();
@@ -15,7 +16,7 @@ export const todosState = atom<Todo[]>({
 });
 
 export const statusSelector = selector<Status>({
-  key: "statusSelector",
+  key: getSelectorKey("status"),
   get: ({ get }) => {
     const list = get(todosState);
     const totalNum = list.length;

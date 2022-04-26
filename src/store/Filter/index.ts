@@ -1,4 +1,5 @@
 import { atom, selector } from "recoil";
+import { getAtomKey, getSelectorKey } from "../../utils";
 
 import { todosState } from "../Todos";
 import { Todo } from "../Todos/types";
@@ -6,12 +7,12 @@ import { Todo } from "../Todos/types";
 import { FilterKey } from "./types";
 
 export const filterState = atom<FilterKey>({
-  key: "filterState",
+  key: getAtomKey("filter"),
   default: "all",
 });
 
 export const filterSelector = selector<Todo[]>({
-  key: "filterSelector",
+  key: getSelectorKey("filter"),
   get: async ({ get }) => {
     const filter = get(filterState);
     const list = get(todosState);
