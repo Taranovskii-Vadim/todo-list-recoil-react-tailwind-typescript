@@ -10,11 +10,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <RecoilRoot>
-      <Suspense fallback={<div>loading...</div>}>
-        <App />
-      </Suspense>
-    </RecoilRoot>
-  </React.StrictMode>
+  <RecoilRoot>
+    <Suspense fallback={<div>loading...</div>}>
+      <App />
+    </Suspense>
+  </RecoilRoot>
 );
